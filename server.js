@@ -10,6 +10,7 @@
 const express = require("express");
 const exphbs = require('express-handlebars');
 const mongoose = require("mongoose");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 // Load mongoose database models
 const db = require("./models");
@@ -56,3 +57,5 @@ mongoose.connect(db.MONGODB_URI, {
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
+
+
