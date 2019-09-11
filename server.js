@@ -1,8 +1,6 @@
-/* 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- Main app server 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-*/
+
+//  Main app server 
+
 
 "use strict";
 
@@ -11,6 +9,8 @@ const express = require("express");
 const exphbs = require('express-handlebars');
 const mongoose = require("mongoose");
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+mongoose.connect(MONGODB_URI);
 
 // Load mongoose database models
 const db = require("./models");
