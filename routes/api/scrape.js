@@ -14,7 +14,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 // the target web site config
-const EETimesURL = "http://www.eetimes.com/";
+const EETimesURL = "http://www.eetimes.com/#";
 
 //
 // Scrape EE Times
