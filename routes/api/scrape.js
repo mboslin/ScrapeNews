@@ -21,7 +21,9 @@ const EETimesURL = "http://www.eetimes.com/";
 //
 function scrapeEETimes(url = EETimesURL) {
   // First, grab the body of the html with axios
-  axios.get(url).then(response => {
+  axios.get(url).catch( function(err) {
+    console.log(err)
+  }).then(response => {
     // collect articles in the body
     const articleInfo = collectEETimesNews(response.data).map(article => {
       article.link = url + article.link;
@@ -29,7 +31,8 @@ function scrapeEETimes(url = EETimesURL) {
     });
     console.log(`Found ${articleInfo.length} articles`);
     addArticles(articleInfo);
-  });
+  }
+  );
 }
 
 //
